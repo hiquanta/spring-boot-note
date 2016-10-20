@@ -1,10 +1,9 @@
-//package com.example.domain;
+//package com.example.domain.s;
 //
 //import javax.persistence.Column;
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.Id;
-//import java.io.Serializable;
 //
 ///**
 // * @author 程序猿DD
@@ -13,9 +12,7 @@
 // * @blog http://blog.didispace.com
 // */
 //@Entity
-//public class User implements Serializable {
-//
-//    private static final long serialVersionUID = -1L;
+//public class Message {
 //
 //    @Id
 //    @GeneratedValue
@@ -25,13 +22,13 @@
 //    private String name;
 //
 //    @Column(nullable = false)
-//    private Integer age;
+//    private String content;
 //
-//    public User(){}
+//    public Message(){}
 //
-//    public User(String name, Integer age) {
+//    public Message(String name, String content) {
 //        this.name = name;
-//        this.age = age;
+//        this.content = content;
 //    }
 //
 //    public Long getId() {
@@ -50,12 +47,12 @@
 //        this.name = name;
 //    }
 //
-//    public Integer getAge() {
-//        return age;
+//    public String getContent() {
+//        return content;
 //    }
 //
-//    public void setAge(Integer age) {
-//        this.age = age;
+//    public void setContent(String content) {
+//        this.content = content;
 //    }
 //
 //}

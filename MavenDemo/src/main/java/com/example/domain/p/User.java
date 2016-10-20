@@ -1,10 +1,9 @@
-//package com.example.domain;
+//package com.example.domain.p;
 //
 //import javax.persistence.Column;
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
 //import javax.persistence.Id;
-//import java.io.Serializable;
 //
 ///**
 // * @author 程序猿DD
@@ -13,9 +12,8 @@
 // * @blog http://blog.didispace.com
 // */
 //@Entity
-//public class User implements Serializable {
 //
-//    private static final long serialVersionUID = -1L;
+//public class User {
 //
 //    @Id
 //    @GeneratedValue
