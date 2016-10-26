@@ -3,7 +3,13 @@ buildscript {
 		springBootVersion = '1.4.1.RELEASE'
 	}
 	repositories {
+		mavenLocal()
+		jcenter()
 		mavenCentral()
+
+		maven { url "http://repo.spring.io/release" }
+		maven { url "http://repo.spring.io/milestone" }
+		// maven { url "http://repo.spring.io/snapshot" }
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -22,39 +28,61 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
+	mavenLocal()
+	jcenter()
 	mavenCentral()
+	maven { url "http://uk.maven.org/maven2" }
+	maven { url 'http://repo.spring.io/libs-release' }
+	maven { url "http://repo.springsource.org/repo" }
 }
 
 
 dependencies {
 	// spring boot
 	compile('org.springframework.boot:spring-boot-starter')
+	compile ('org.springframework.boot:spring-boot-starter-web')
+	compile ('org.springframework.boot:spring-boot-starter-web')
+	compile ('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile ('org.springframework.boot:spring-boot-starter-redis')
+	compile ('com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.1')
+	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile ('org.springframework.boot:spring-boot-starter-security')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	//spring framework
 
 	//persistence
+	compile ('com.zaxxer:HikariCP')
+	compile ('org.springframework:spring-orm')
+	compile ('org.hibernate:hibernate-entitymanager')
+	compile ('org.hsqldb:hsqldb')
 
 	//view
-
+	compile 'de.neuland-bfi:spring-jade4j:0.4.2'
+	compile 'org.pegdown:pegdown:1.6.0'
 	//python
-
+	compile 'org.python:jython-standalone:2.7.0'
 	//spring data
 
 	//cache
-
+	compile 'org.springframework.data:spring-data-redis'
+	compile 'redis.clients:jedis:2.7.3'
 	//Mysql
-
+	compile ('mysql:mysql-connector-java')
 	//Validation
-
+	compile ('org.hibernate:hibernate-validator')
 	//Logging
 
 	// @Inject
-
+	compile 'javax.inject:javax.inject:+'
 	// JSON
 
 	// Utilities
-
+	compile ('org.modelmapper:modelmapper:0.7.5')
+	compile ('org.projectlombok:lombok:1.16.6')
 	// static resources, ref. http://www.webjars.org/
-
+	compile 'org.webjars:jquery:2.1.4'
+	compile 'org.webjars:bootstrap:3.3.5'
+	compile 'org.webjars:font-awesome:4.3.0-3'
+	compile 'org.webjars:ace:1.2.0'
 	// test
 }

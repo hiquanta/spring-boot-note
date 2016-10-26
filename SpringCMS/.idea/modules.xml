@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringCMS.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringCMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringCMS_main.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringCMS_main.iml" group="SpringCMS" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SpringCMS_test.iml" filepath="$PROJECT_DIR$/.idea/modules/SpringCMS_test.iml" group="SpringCMS" />
+    </modules>
+  </component>
+</project>
