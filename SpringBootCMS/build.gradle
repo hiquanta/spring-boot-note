@@ -84,5 +84,9 @@ dependencies {
 	compile 'org.webjars:bootstrap:3.3.5'
 	compile 'org.webjars:font-awesome:4.3.0-3'
 	compile 'org.webjars:ace:1.2.0'
+	//RESTful API doc
+	compile ('io.springfox:springfox-swagger2:2.2.2')
+	compile ('io.springfox:springfox-swagger-ui:2.2.2')
+
 	// test
 }

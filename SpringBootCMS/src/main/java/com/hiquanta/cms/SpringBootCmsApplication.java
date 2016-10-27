@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-// 开启缓存请把下行取消注释
-//@EnableCaching
+@EnableCaching
 public class SpringBootCmsApplication {
 
 	public static void main(String[] args) {

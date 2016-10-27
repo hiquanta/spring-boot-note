@@ -74,7 +74,7 @@ public class TomcatConfig {
                 }
             };
         }
-        
+
         return new TomcatConnectorCustomizer() {
             @Override public void customize(Connector connector) {
                 connector.setSecure(true);
@@ -99,7 +99,7 @@ public class TomcatConfig {
         connector.setScheme("http");
         connector.setPort(8081);
         connector.setSecure(false);
-        connector.setRedirectPort(8080);
+        connector.setRedirectPort(8443);
         return connector;
     }
 }
