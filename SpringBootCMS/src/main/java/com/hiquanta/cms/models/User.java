@@ -23,7 +23,7 @@ public class User extends BaseModel {
     @Column(unique = true)
     private String email;
 
-    @JsonIgnore
+   // @JsonIgnore
     private String password;
 
     private String role = ROLE_USER;

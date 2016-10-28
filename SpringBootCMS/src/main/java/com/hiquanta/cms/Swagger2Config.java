@@ -21,7 +21,7 @@ public class Swagger2Config {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.hiquanta.cms.restcontrollerv1"))
+                .apis(RequestHandlerSelectors.basePackage("com.hiquanta.cms.restcontroller.v1"))
                 .paths(PathSelectors.any())
                 .build();
     }
