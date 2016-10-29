@@ -76,7 +76,7 @@ dependencies {
 	// @Inject
 	compile 'javax.inject:javax.inject:+'
 	// JSON
-
+	compile 'com.google.code.gson:gson:2.3.1'
 	// Utilities
 	compile ('org.modelmapper:modelmapper:0.7.5')
 	compile ('org.projectlombok:lombok:1.16.6')

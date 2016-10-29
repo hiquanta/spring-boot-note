@@ -1,6 +1,7 @@
 package com.hiquanta.cms.repositories;
 
 import com.hiquanta.cms.models.Post;
+import com.hiquanta.cms.models.User;
 import com.hiquanta.cms.models.support.PostStatus;
 import com.hiquanta.cms.models.support.PostType;
 import org.springframework.data.domain.Page;
@@ -32,4 +33,5 @@ public interface PostRepository extends JpaRepository<Post, Long> {
             "GROUP BY t.id " +
             "ORDER BY tag_count DESC")
     List<Object[]> countPostsByTags(@Param("status") PostStatus status);
+    List<Post> findByUser(User user);
 }
