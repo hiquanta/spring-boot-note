@@ -19,15 +19,16 @@ import java.util.Set;
  */
 
 @Entity
-@Table(name="posts")
-@Getter @Setter
+@Table(name = "posts")
+@Getter
+@Setter
 public class Post extends BaseModel {
     private static final SimpleDateFormat SLUG_DATE_FORMAT = new SimpleDateFormat("yyyy/MM/dd");
     @ManyToOne
     private User user;
     @Column(nullable = false)
     private String title;
-    @Type(type="text")
+    @Type(type = "text")
     private String content;
     @Type(type = "text")
     private String renderedContent;
@@ -52,6 +53,7 @@ public class Post extends BaseModel {
     private Set<Tag> tags = new HashSet<>();
 
     private String permalink;
+
     public String getRenderedContent() {
         if (this.postFormat == PostFormat.MARKDOWN)
             return renderedContent;
@@ -59,8 +61,30 @@ public class Post extends BaseModel {
         return getContent();
     }
 
-    public void setPermalink(String permalink){
+    public void setPermalink(String permalink) {
         String token = permalink.toLowerCase().replace("\n", " ").replaceAll("[^a-z\\d\\s]", " ");
         this.permalink = StringUtils.arrayToDelimitedString(StringUtils.tokenizeToStringArray(token, " "), "-");
+    }
+
+    public String subContent(int n) {
+        //格式化字符串长度，超出部分显示省略号,区分汉字跟字母。汉字2个字节，字母数字一个字节
+        String temp = "";
+        if (content.length() < n) {//如果长度比需要的长度n小,返回原字符串
+            return content;
+        } else {
+            int t = 0;
+            char[] tempChar = content.toCharArray();
+            for (int i = 0; i < tempChar.length && t < n; i++) {
+                if ((int) tempChar[i] >= 0x4E00 && (int) tempChar[i] <= 0x9FA5)//是否汉字
+                {
+                    temp += tempChar[i];
+                    t += 2;
+                } else {
+                    temp += tempChar[i];
+                    t++;
+                }
+            }
+            return (temp + "");
+        }
     }
 }

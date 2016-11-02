@@ -4,6 +4,7 @@ import com.hiquanta.cms.Constants;
 import com.hiquanta.cms.models.Post;
 import com.hiquanta.cms.services.AppSetting;
 import com.hiquanta.cms.services.PostService;
+import com.hiquanta.cms.support.web.ViewHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,8 @@ public class HomeController {
 
     @Autowired
     private AppSetting appSetting;
+    @Autowired
+    private ViewHelper viewHelper;
 
     @RequestMapping(value = "", method = GET)
     public String index(@RequestParam(defaultValue = "1") int page, Model model) {
@@ -31,7 +34,8 @@ public class HomeController {
         model.addAttribute("totalPages", posts.getTotalPages());
         model.addAttribute("posts", posts);
         model.addAttribute("page", page + 1);
-       // model.addAttribute("App", appSetting);
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
 
         return "home/index";
     }
