@@ -26,7 +26,6 @@ import static com.hiquanta.cms.Constants.ENV_PRODUCTION;
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter{
     @Autowired
-    @Qualifier("ViewHelper")
     private ViewHelper viewHelper;
 
     @Autowired

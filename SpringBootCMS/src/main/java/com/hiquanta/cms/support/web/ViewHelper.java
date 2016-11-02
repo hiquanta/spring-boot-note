@@ -4,8 +4,15 @@ import com.domingosuarez.boot.autoconfigure.jade4j.JadeHelper;
 import com.hiquanta.cms.services.AppSetting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.core.annotation.AliasFor;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.context.annotation.ApplicationScope;
 
+import javax.jws.WebResult;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,7 +21,7 @@ import java.util.Date;
  */
 @Service
 @JadeHelper("viewHelper")
-@Qualifier("ViewHelper")
+@ApplicationScope
 public class ViewHelper {
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMMM dd, yyyy");
     private static final SimpleDateFormat DATE_FORMAT_MONTH_DAY = new SimpleDateFormat("MMM dd");
