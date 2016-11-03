@@ -36,19 +36,19 @@ public class PostController {
     public String show(@PathVariable String permalink, Model model){
         Post post = null;
 
-//        try{
-//            post = postService.getPublishedPostByPermalink(permalink);
-//        } catch (NotFoundException ex){
-//            if (permalink.matches("\\d+"))
-//                post = postService.getPost(Long.valueOf(permalink));
-//        }
-//
-//        if (post == null)
-//            throw new NotFoundException("Post with permalink " + permalink + " is not found");
+        try{
+            post = postService.getPublishedPostByPermalink(permalink);
+        } catch (NotFoundException ex){
+            if (permalink.matches("\\d+"))
+                post = postService.getPost(Long.valueOf(permalink));
+        }
+
+        if (post == null)
+            throw new NotFoundException("Post with permalink " + permalink + " is not found");
         model.addAttribute("App", appSetting);
         model.addAttribute("viewHelper", viewHelper);
-//        model.addAttribute("post", post);
-//        model.addAttribute("tags", postService.getPostTags(post));
+        model.addAttribute("post", post);
+        model.addAttribute("tags", postService.getPostTags(post));
 
         return "posts/show";
     }

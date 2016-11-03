@@ -64,6 +64,7 @@ dependencies {
 	compile 'org.pegdown:pegdown:1.6.0'
 	compile 'org.thymeleaf:thymeleaf:3.0.1.RELEASE'
 	compile 'org.thymeleaf:thymeleaf-spring4:3.0.1.RELEASE'
+	compile 'org.pegdown:pegdown:1.6.0'
 	//python
 	compile 'org.python:jython-standalone:2.7.0'
 	//spring data
