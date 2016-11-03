@@ -47,8 +47,10 @@ public class HomeController {
         if (post == null) {
             post = postService.createAboutPage();
         }
-
+      //  post.getTitle()
         model.addAttribute("about", post);
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
         return "home/about";
     }
 

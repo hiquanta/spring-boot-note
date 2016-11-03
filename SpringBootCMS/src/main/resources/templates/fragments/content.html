@@ -1,0 +1,26 @@
+<div th:fragment="content">
+    <!--<div class="chip">-->
+    <!--<img src="images/yuna.jpg" alt="Contact Person">-->
+    <!--最近更新-->
+    <!--</div>-->
+    <ul class="collection grey">
+        <h5 class="left-align ">最近更新</h5>
+    </ul>
+    <ul class="collection" th:each="post : ${posts}">
+
+        <a th:href="@{'/posts/'+${post.getPermalink().length() > 0 ? post.getPermalink() : post.getId()}}"
+           class="collection-item avatar card">
+            <li>
+                <i class="material-icons circle">folder</i>
+                <span class="title" th:text="${post.getTitle()}"></span>
+                <p th:text="${post.subContent(60)}"></p>
+                <p href="#!" class="section" th:text="${viewHelper.getFormattedDate(post.getCreatedAt())}"><i
+                        class="material-icons">query_builder</i></p>
+            </li>
+        </a>
+        <!-- end-->
+    </ul>
+    <div class="row center">
+        <a class="waves-effect waves-light btn">更多</a>
+    </div>
+</div>

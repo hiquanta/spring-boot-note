@@ -42,7 +42,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile ('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-starter-actuator")
-	//compile ('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile ('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile ('org.springframework.boot:spring-boot-starter-redis')
 	compile ('com.domingosuarez.boot:spring-boot-starter-jade4j:0.3.1')
 	compile ('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -56,12 +56,14 @@ dependencies {
 	compile ('org.springframework:spring-orm')
 	compile ('org.hibernate:hibernate-entitymanager')
 	compile ('org.hsqldb:hsqldb')
-
 	//view
+	compile 'org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.0.RELEASE'
+	compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.0.5'
+	compile 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.0.5'
 	compile 'de.neuland-bfi:spring-jade4j:0.4.2'
 	compile 'org.pegdown:pegdown:1.6.0'
-	compile 'org.thymeleaf:thymeleaf:3.0.0.RELEASE'
-	compile 'org.thymeleaf:thymeleaf-spring4:3.0.0.RELEASE'
+	compile 'org.thymeleaf:thymeleaf:3.0.1.RELEASE'
+	compile 'org.thymeleaf:thymeleaf-spring4:3.0.1.RELEASE'
 	//python
 	compile 'org.python:jython-standalone:2.7.0'
 	//spring data
