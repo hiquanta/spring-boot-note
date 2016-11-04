@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/homepage}">
+<!--<head  th:include="fragments/head::head"></head>-->
+<body>
+<th:block layout:fragment="content">
+    <ul class="collection grey">
+        <h5 class="center-align ">归档</h5>
+    </ul>
+    <ul class="collection z-depth-5" th:each="post : ${posts}" style="margin-left: 5%;margin-right: 5%">
+
+        <a th:href="@{'/posts/'+${post.getPermalink().length() > 0 ? post.getPermalink() : post.getId()}}"
+           class="collection-item avatar card">
+            <li>
+                <i class="material-icons circle">folder</i>
+                <span class="title" th:text="${post.getTitle()}"></span>
+                <!--<p th:text="${post.subContent(60)}"></p>-->
+                <p href="#!" class="section" th:text="${viewHelper.getFormattedDate(post.getCreatedAt())}"><i
+                        class="material-icons">query_builder</i></p>
+            </li>
+        </a>
+        <!-- end-->
+    </ul>
+</th:block>
+</body>
+</html>

@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 /**
@@ -25,10 +27,12 @@ public class PostController {
     private AppSetting appSetting;
     @Autowired
     private ViewHelper viewHelper;
+
     @RequestMapping(value = "archive", method = GET)
     public String archive(Model model){
         model.addAttribute("posts", postService.getArchivePosts());
-
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
         return "posts/archive";
     }
 

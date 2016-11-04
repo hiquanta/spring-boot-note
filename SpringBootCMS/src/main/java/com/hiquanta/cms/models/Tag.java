@@ -24,6 +24,11 @@ public class Tag extends BaseModel {
 
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
     public Tag(String name) {
         this.setName(name);
     }

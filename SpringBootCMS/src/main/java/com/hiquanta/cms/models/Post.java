@@ -69,6 +69,7 @@ public class Post extends BaseModel {
     public String subContent(int n) {
         //格式化字符串长度，超出部分显示省略号,区分汉字跟字母。汉字2个字节，字母数字一个字节
         String temp = "";
+
         if (content.length() < n) {//如果长度比需要的长度n小,返回原字符串
             return content;
         } else {

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/homepage}">
+<!--<head  th:include="fragments/head::head"></head>-->
+<body>
+<th:block layout:fragment="content">
+    <ul class="collection grey">
+        <h5 class="center-align " th:text="'Tags:'+${tag}"></h5>
+    </ul>
+    <ul class="collection z-depth-5" th:each="post : ${posts}" style="margin-left: 5%;margin-right: 5%">
+
+        <a th:href="@{'/posts/'+${post.getPermalink().length() > 0 ? post.getPermalink() : post.getId()}}"
+           class="collection-item avatar card">
+            <li>
+                <i class="material-icons circle">folder</i>
+                <span class="title" th:text="${post.getTitle()}"></span>
+                <p th:text="${post.subContent(60)}"></p>
+                <p href="#!" class="section" th:text="${viewHelper.getFormattedDate(post.getCreatedAt())}"><i
+                        class="material-icons">query_builder</i></p>
+            </li>
+        </a>
+        <!-- end-->
+    </ul>
+
+    <ul class="page" style="margin-left: 10%;margin-right: 10%">
+        <li class="left-align" th:if="${page > 1&& totalPages > page}"><div class="chip" style="float: left;display: inline"><a th:href="'?page='+${page - 1}"><span>←</span>Newer posts</a></div></li>
+        <li class="left-align" th:if="${page > 1&& totalPages <= page}"><div class="chip" ><a th:href="'?page='+${page - 1}"><span>←</span>Newer posts</a></div></li>
+        <li class="right-align" th:if="${totalPages > page}"><div class="chip" ><a th:href="'?page='+${page + 1}">Older posts<span>→</span></a></div></li>
+   </ul>
+</th:block>
+</body>
+</html>

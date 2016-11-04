@@ -6,6 +6,7 @@ import com.hiquanta.cms.models.Tag;
 import com.hiquanta.cms.services.AppSetting;
 import com.hiquanta.cms.services.PostService;
 import com.hiquanta.cms.services.TagService;
+import com.hiquanta.cms.support.web.ViewHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -30,10 +31,14 @@ public class TagController {
 
     @Autowired
     private AppSetting appSetting;
+    @Autowired
+    private ViewHelper viewHelper;
 
     @RequestMapping(value = "", method = GET)
     public String index(Model model){
         model.addAttribute("tags", postService.countPostsByTags());
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
         return "tags/index";
     }
 
@@ -52,6 +57,8 @@ public class TagController {
         model.addAttribute("posts", posts);
         model.addAttribute("page", page + 1);
         model.addAttribute("totalPages", posts.getTotalPages());
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
 
         return "tags/show";
     }

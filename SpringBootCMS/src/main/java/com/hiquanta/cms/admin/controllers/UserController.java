@@ -3,8 +3,10 @@ package com.hiquanta.cms.admin.controllers;
 import com.hiquanta.cms.forms.UserForm;
 import com.hiquanta.cms.models.User;
 import com.hiquanta.cms.repositories.UserRepository;
+import com.hiquanta.cms.services.AppSetting;
 import com.hiquanta.cms.services.UserService;
 import com.hiquanta.cms.support.web.MessageHelper;
+import com.hiquanta.cms.support.web.ViewHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +28,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class UserController {
     private UserService userService;
     private UserRepository userRepository;
-
+    @Autowired
+    private AppSetting appSetting;
+    @Autowired
+    private ViewHelper viewHelper;
     @Autowired
     public UserController(UserService userService, UserRepository userRepository){
         this.userService = userService;

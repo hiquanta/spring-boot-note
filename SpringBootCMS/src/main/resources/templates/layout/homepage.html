@@ -8,39 +8,9 @@
 <header  th:include="fragments/header::header"></header>
 <main>
     <div class="section no-pad-bot" id="index-banner" th:include="fragments/banner::banner"></div>
-    <!--<div layout:fragment="content">-->
-        <!--<p>Content goes here...</p>-->
-    <!--</div>-->
-    <!--<div class="container" th:replace="fragments/content::content"></div>-->
     <div class="container" layout:fragment="content">
         <p>Content goes here...</p>
     </div>
-    <!--<div class="container">-->
-        <!--&lt;!&ndash;<div class="chip">&ndash;&gt;-->
-        <!--&lt;!&ndash;<img src="images/yuna.jpg" alt="Contact Person">&ndash;&gt;-->
-        <!--&lt;!&ndash;最近更新&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--<ul class="collection grey">-->
-            <!--<h5 class="left-align ">最近更新</h5>-->
-        <!--</ul>-->
-        <!--<ul class="collection" th:each="post : ${posts}">-->
-
-            <!--<a th:href="@{'/posts/'+${post.getPermalink().length() > 0 ? post.getPermalink() : post.getId()}}"-->
-               <!--class="collection-item avatar card">-->
-                <!--<li>-->
-                    <!--<i class="material-icons circle">folder</i>-->
-                    <!--<span class="title" th:text="${post.getTitle()}"></span>-->
-                    <!--<p th:text="${post.subContent(60)}"></p>-->
-                    <!--<p href="#!" class="section" th:text="${viewHelper.getFormattedDate(post.getCreatedAt())}"><i-->
-                            <!--class="material-icons">query_builder</i></p>-->
-                <!--</li>-->
-            <!--</a>-->
-            <!--&lt;!&ndash; end&ndash;&gt;-->
-        <!--</ul>-->
-        <!--<div class="row center">-->
-            <!--<a class="waves-effect waves-light btn">更多</a>-->
-        <!--</div>-->
-    <!--</div>-->
 </main>
 <footer class="page-footer" th:include="fragments/footer::footer" ></footer>
 <!--  Scripts-->
@@ -49,11 +19,11 @@
     document.write('<script src="bin/jquery-2.1.1.min.js"><\/script>');
 }
 </script>
-<script src="js/jquery.timeago.min.js"></script>
-<script src="js/prism.js"></script>
-<script src="jade/lunr.min.js"></script>
+<script src="/js/jquery.timeago.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/jade/lunr.min.js"></script>
 <!--<script src="jade/search.js"></script>-->
-<script src="bin/materialize.js"></script>
-<script src="js/init.js"></script>
+<script src="/bin/materialize.js"></script>
+<script src="/js/init.js"></script>
 </body>
 </html>

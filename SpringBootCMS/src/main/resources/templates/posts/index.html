@@ -12,7 +12,7 @@
     <ul class="collection z-depth-5" th:each="post : ${posts}" style="margin-left: 5%;margin-right: 5%">
 
         <a th:href="@{'/posts/'+${post.getPermalink().length() > 0 ? post.getPermalink() : post.getId()}}"
-           class="collection-item avatar card ">
+           class="collection-item avatar card">
             <li>
                 <i class="material-icons circle">folder</i>
                 <span class="title" th:text="${post.getTitle()}"></span>
@@ -24,26 +24,8 @@
         <!-- end-->
     </ul>
     <div class="row center">
-        <a class="waves-effect waves-light btn z-depth-5">更多</a>
+        <a class="waves-effect waves-light btn">更多</a>
     </div>
 </th:block>
-<!--<header  th:include="fragments/header::header"></header>-->
-<!--<main>-->
-<!--<div class="section no-pad-bot" id="index-banner" th:include="fragments/banner::banner"></div>-->
-<!--<div class="container" th:replace="fragments/content::content"></div>-->
-<!--</main>-->
-<!--<footer class="page-footer" th:include="fragments/footer::footer"></footer>-->
-<!--&lt;!&ndash;  Scripts&ndash;&gt;-->
-<!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
-<!--<script>if (!window.jQuery) {-->
-<!--document.write('<script src="bin/jquery-2.1.1.min.js"><\/script>');-->
-<!--}-->
-<!--</script>-->
-<!--<script src="js/jquery.timeago.min.js"></script>-->
-<!--<script src="js/prism.js"></script>-->
-<!--<script src="jade/lunr.min.js"></script>-->
-<!--&lt;!&ndash;<script src="jade/search.js"></script>&ndash;&gt;-->
-<!--<script src="bin/materialize.js"></script>-->
-<!--<script src="js/init.js"></script>-->
 </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/homepage}">
+<body>
+<th:block layout:fragment="content">
+    <ul class="collection grey">
+        <h5 class="center-align ">Tags</h5>
+    </ul>
+    <ul class="tags "  >
+        <li th:each="tag : ${tags}" class="left-align" style="margin-left: 5%;list-style: none;display: inline-block">
+            <a class="chip" th:href="'/tags/'+${tag[0]}" th:text="${tag[0]}+'('+${tag[1]}+')'" >
+            </a>
+        </li>
+    </ul>
+</th:block>
+</body>
+</html>
