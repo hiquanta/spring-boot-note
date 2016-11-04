@@ -6,8 +6,10 @@
 <!--<head  th:include="fragments/head::head"></head>-->
 <body>
 <th:block layout:fragment="content">
-    <ul class="collection grey">
-        <h5 class="left-align ">最近更新</h5>
+    <ul style="margin-left: 5%;margin-right: 5%">
+        <li >
+            <h5 class="header">最近更新</h5>
+        </li>
     </ul>
     <ul class="collection z-depth-5" th:each="post : ${posts}" style="margin-left: 5%;margin-right: 5%">
 
