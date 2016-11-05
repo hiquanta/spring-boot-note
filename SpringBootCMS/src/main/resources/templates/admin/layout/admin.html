@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       th:fragment="html" >
+<head  th:include="admin/layout/head::head"></head>
+<body>
+<nav  class=" z-depth-3" th:include="admin/layout/navbar::navbar"></nav>
+<main>
+    <div class="container" layout:fragment="content">
+        <p>Content goes here...</p>
+    </div>
+</main>
+</body>
+</html>

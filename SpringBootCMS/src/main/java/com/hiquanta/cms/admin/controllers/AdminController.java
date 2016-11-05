@@ -31,7 +31,9 @@ public class AdminController {
     }
 
     @RequestMapping("")
-    public String index(){
+    public String index(Model model){
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
         return "admin/home/index";
     }
 

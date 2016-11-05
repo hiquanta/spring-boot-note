@@ -8,7 +8,7 @@
     <ul class="collection grey">
         <h5 class="center-align ">Tags</h5>
     </ul>
-    <ul class="tags "  >
+    <ul class="tags"  >
         <li th:each="tag : ${tags}" class="left-align" style="margin-left: 5%;list-style: none;display: inline-block">
             <a class="chip" th:href="'/tags/'+${tag[0]}" th:text="${tag[0]}+'('+${tag[1]}+')'" >
             </a>
