@@ -1,10 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<!--suppress ThymeleafVariablesResolveInspection -->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/layout/admin}">
 <body>
-
+<th:block layout:fragment="content" >
+    <div class=" card-panel grey lighten-5 z-depth-5" style="margin-left:5%;margin-right: 5%">
+        <form class="col s12 center-align" method="post" action="/admin/settings" >
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" type="text" name="siteName" class="validate" >
+                    <label >SiteName</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input  type="text" class="validate" name="siteSlogan" >
+                    <label >SiteSlogan</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input  type="text" class="validate" name="pageSize" >
+                    <label >PageSize</label>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <p class="center-align">
+                        <button class="btn btn-large waves-effect waves-light" type="submit" name="action">提交
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</th:block>
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>if (!window.jQuery) {
+    document.write('<script src="bin/jquery-2.1.1.min.js"><\/script>');
+}
+</script>
+<script src="/js/jquery.timeago.min.js"></script>
+<script src="/js/prism.js"></script>
+<script src="/jade/lunr.min.js"></script>
+<!--<script src="jade/search.js"></script>-->
+<script src="/bin/materialize.js"></script>
+<script src="/js/init.js"></script>
 </body>
 </html>

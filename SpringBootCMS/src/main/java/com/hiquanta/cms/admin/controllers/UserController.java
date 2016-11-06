@@ -41,13 +41,16 @@ public class UserController {
     @RequestMapping("profile")
     public String profile(Model model){
         model.addAttribute("user", userService.currentUser());
-
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
         return "admin/users/profile";
     }
 
     @RequestMapping(value = "{userId:[0-9]+}", method = POST)
-    public String update(@PathVariable Long userId, @Valid UserForm userForm, Errors errors, RedirectAttributes ra){
+    public String update(@PathVariable Long userId, @Valid UserForm userForm, Errors errors, Model model,RedirectAttributes ra){
         User user = userRepository.findOne(userId);
+        model.addAttribute("App", appSetting);
+        model.addAttribute("viewHelper", viewHelper);
         Assert.notNull(user);
 
         if (errors.hasErrors()){

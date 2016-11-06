@@ -1,11 +1,18 @@
 <nav th:fragment="navbar">
     <div class="nav-wrapper">
-        <a href="/admin" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+        <a href="#!" class="brand-logo">Logo</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="/admin/posts"><i class="material-icons">list</i></a></li>
-            <li><a href="/admin/settings"><i class="material-icons">settings</i></a></li>
-            <li><a href="/admin/users/profile"><i class="material-icons">perm_identity</i></a></li>
-            <li><a href="/"><i class="material-icons">home</i></a></li>
+            <li><a href="/admin/posts" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="博客管理"><i class="material-icons">list</i></a></li>
+            <li><a href="/admin/settings" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="设置"><i class="material-icons">settings</i></a></li>
+            <li><a href="/admin/users/profile" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="个人资料"><i class="material-icons">perm_identity</i></a></li>
+            <li><a href="/" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="主页"><i class="material-icons">home</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="/admin/posts" ><i class="material-icons">list</i></a></li>
+            <li><a href="/admin/settings" ><i class="material-icons">settings</i></a></li>
+            <li><a href="/admin/users/profile" ><i class="material-icons">perm_identity</i></a></li>
+            <li><a href="/" ><i class="material-icons" >home</i></a></li>
         </ul>
     </div>
 </nav>

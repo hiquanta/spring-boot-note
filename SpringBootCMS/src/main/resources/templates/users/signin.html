@@ -11,6 +11,7 @@
             <h5 class="teal-text text-darken-1" align="center">Login</h5>
             <div class="row">
                 <form action="/authenticate" method="POST" style="margin-left: 5%;margin-right: 5%">
+                    <input type="hidden" name="_csrf" th:value="${_csrf.token}">
                     <div class="row">
                         <div class="input-field ">
                             <input id="" name="username" type="text" class="validate" pattern=".{4,40}" required
